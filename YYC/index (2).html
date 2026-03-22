@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calgary Supply Chain & Economic Insights</title>
+    <!-- SEO Basics -->
+<title>Calgary Insights - Real-Time Supply Chain Dashboards</title>
+<meta name="description" content="Explore Calgary’s supply chains through interactive, real-time dashboards on energy, agriculture, logistics, and more.">
+<meta name="keywords" content="Calgary supply chain, energy dashboard, logistics costs, agriculture exports, yyc economy">
+<meta name="author" content="Hamza Abdi">
+
+<!-- Social Media Preview -->
+<meta property="og:title" content="Calgary Insights - Real-Time Dashboards">
+<meta property="og:description" content="Real-time visualizations of Calgary's supply chain trends and chokepoints.">
+<meta property="og:image" content="https://yyceconomy.com/preview.jpg"> <!-- Replace this with your actual image URL -->
+<meta property="og:url" content="https://yyceconomy.com">
+<meta name="twitter:card" content="summary_large_image">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0056b3',
+                        secondary: '#1a936f',
+                        accent: '#ffc107',
+                        dark: '#1a202c',
+                        light: '#f7fafc'
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(26, 32, 44, 0.95) 0%, rgba(0, 86, 179, 0.85) 100%);
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .chart-placeholder {
+            background: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%);
+        }
+    </style>
+    <!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-43MW06FPFY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-43MW06FPFY');
+</script>
+</head>
+<body class="bg-gray-50 text-dark">
+<!-- Navigation -->
+<nav class="bg-white shadow-md sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between h-16 items-center">
+      <!-- Logo -->
+      <div class="flex items-center">
+        <i data-feather="bar-chart-2" class="text-primary h-8 w-8"></i>
+        <span class="ml-2 text-xl font-bold text-dark">Calgary Insights</span>
+      </div>
+
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex items-center space-x-6">
+        <a href="#" class="text-primary px-3 py-2 text-sm font-medium border-b-2 border-primary">Home</a>
+        <a href="overview.html" class="text-gray-600 hover:text-primary px-3 py-2 text-sm font-medium">Overview</a>
+        <a href="#contact" class="text-sm bg-primary text-white px-4 py-2 rounded-md">Contact</a>
+      </div>
+
+      <!-- Mobile Toggle Button -->
+      <div class="md:hidden">
+        <button id="menu-toggle" class="text-gray-500 focus:outline-none">
+          <i data-feather="menu" class="h-6 w-6"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden px-4 pb-4">
+    <a href="#" class="block text-primary py-2 text-sm font-medium">Home</a>
+    <a href="overview.html" class="block text-gray-600 hover:text-primary py-2 text-sm font-medium">Overview</a>
+    <a href="#contact" class="block text-sm bg-primary text-white px-4 py-2 mt-2 rounded-md">Contact</a>
+  </div>
+</nav>
+    <!-- Hero Section -->
+    <div class="hero-gradient text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
+            <div class="md:flex md:items-center md:justify-between">
+                <div class="md:w-1/2" data-aos="fade-right">
+                    <h1 class="text-4xl md:text-5xl font-bold leading-tight">Independent Insights on Calgary's Supply Chains & Economy</h1>
+                    <p class="mt-4 text-xl md:text-2xl text-gray-200">Analyzing how global disruptions ripple into Calgary's energy, agriculture, logistics, and aviation sectors.</p>
+                    <div class="mt-8 flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        
+<a href="#latest-insights" class="border-2 border-white text-white px-6 py-3 rounded-md font-semibold hover:bg-white hover:text-dark transition text-center">
+  Read Latest
+</a>
+                    </div>
+                </div>
+                <div class="hidden md:block md:w-1/2" data-aos="fade-left">
+                    <div class="bg-white bg-opacity-10 p-6 rounded-xl backdrop-blur-sm border border-white border-opacity-20">
+<div class="h-64 rounded-lg overflow-hidden">
+  <img src="Calgary-image.jpeg" alt="Calgary skyline" class="w-full h-full object-cover" />
+</div>
+                        <p class="mt-4 text-gray-200">From rail yards to refineries, Calgary connects Canada’s energy, food, and freight corridors.
+</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Featured Charts -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="text-center mb-12" data-aos="fade-up">
+            <h2 class="text-3xl font-bold text-dark">Featured Charts</h2>
+            <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">Real-time data visualizations tracking Calgary's economic pulse</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Chart 1 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden transition duration-300 card-hover" data-aos="fade-up" data-aos-delay="100">
+                <div class="p-6">
+                    <div class="flex items-center">
+                        <div class="bg-primary bg-opacity-10 p-3 rounded-full">
+                            <i data-feather="zap" class="text-primary h-6 w-6"></i>
+                        </div>
+                        <h3 class="ml-4 text-xl font-semibold text-dark">Energy Markets</h3>
+                    </div>
+<div class="chart-placeholder h-48 md:h-64 rounded-lg overflow-hidden">
+  <img src="energy-placeholder.png" class="w-full h-full object-cover" alt="Energy Market Dashboard Preview">
+</div>
+                    <p class="mt-4 text-gray-600">Tracking Calgary's key energy commodities and their impact on local businesses</p>
+<a href="energy.html" class="mt-6 inline-flex items-center text-primary font-medium hover:text-opacity-80">
+                        Explore Chart
+                        <i data-feather="arrow-right" class="ml-2 h-4 w-4"></i>
+                    </a>
+                </div>
+            </div>
+            
+<!-- Chart 2 -->
+<div class="bg-white rounded-xl shadow-md overflow-hidden transition duration-300 card-hover" data-aos="fade-up" data-aos-delay="200">
+  <div class="p-6">
+    <div class="flex items-center">
+      <div class="bg-secondary bg-opacity-10 p-3 rounded-full">
+        <i data-feather="package" class="text-secondary h-6 w-6"></i>
+      </div>
+      <h3 class="ml-4 text-xl font-semibold text-dark">Agriculture Exports</h3>
+    </div>
+<div class="chart-placeholder h-48 md:h-64 rounded-lg overflow-hidden">
+  <img src="wheat-placeholder.png" class="w-full h-full object-cover" alt="Agriculture Market Dashboard Preview">
+</div>
+    <p class="mt-4 text-gray-600">Visualizing Canada's wheat export volumes (crop year ending in July) and their role in global supply chains.</p>
+    <a href="wheat_exports_chart.html" class="mt-6 inline-flex items-center text-primary font-medium hover:text-opacity-80">
+      Explore Chart
+      <i data-feather="arrow-right" class="ml-2 h-4 w-4"></i>
+    </a>
+  </div>
+</div>
+            
+
+<!-- Chart 3 -->
+<div class="bg-white rounded-xl shadow-md overflow-hidden transition duration-300 card-hover" data-aos="fade-up" data-aos-delay="200">
+  <div class="p-6">
+    <div class="flex items-center">
+      <div class="bg-secondary bg-opacity-10 p-3 rounded-full">
+        <i data-feather="package" class="text-secondary h-6 w-6"></i>
+      </div>
+      <h3 class="ml-4 text-xl font-semibold text-dark">Logistics Costs</h3>
+    </div>
+<div class="chart-placeholder h-48 md:h-64 rounded-lg overflow-hidden">
+  <img src="logistics-cpi-preview.png" class="w-full h-full object-cover" alt="Logistics Market Dashboard Preview">
+</div>
+    <p class="mt-4 text-gray-600">Comparing Alberta and BC's CPI to reveal regional cost shifts and logistics pressure points.</p>
+    <a href="logistics.html" class="mt-6 inline-flex items-center text-primary font-medium hover:text-opacity-80">
+      Explore Chart
+      <i data-feather="arrow-right" class="ml-2 h-4 w-4"></i>
+    </a>
+  </div>
+</div>
+
+
+            </div>
+        </div>
+    </div>
+
+<!-- Additional Insights -->
+<div id="latest-insights" class="bg-gray-100 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-dark">Additional Insights</h2>
+                <h2 class="text-1xl font-bold text-dark">Expanded Analysis of Calgary’s Key Economic Charts</h2>
+                <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">Each report below unpacks the charts above — with strategic implications for Calgary’s energy, exports, and logistics. Follow on LinkedIn for weekly updates.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Insight 1 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden transition duration-300 card-hover" data-aos="fade-up" data-aos-delay="100">
+                    <div class="h-48 bg-gradient-to-r from-primary to-secondary flex items-center justify-center">
+                        <i data-feather="trending-up" class="text-white h-16 w-16"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500">
+                            <span>Energy Market</span>
+                            <span class="mx-2">•</span>
+                            <span>2025</span>
+                        </div>
+                        <h3 class="mt-2 text-xl font-semibold text-dark">Crude Oil Spread Volatility & Local Exposure</h3>
+                        <p class="mt-4 text-gray-600">PDF analysis on how global price shifts ripple into Calgary’s economy</p>
+<a href="https://huggingface.co/spaces/hamsterz/calgary-insights/resolve/main/EnergyReport.pdf"
+   class="mt-6 inline-flex items-center text-primary font-medium hover:text-opacity-80"
+   target="_blank" rel="noopener noreferrer">
+   View PDF
+                            <i data-feather="arrow-right" class="ml-2 h-4 w-4"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Insight 2 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden transition duration-300 card-hover" data-aos="fade-up" data-aos-delay="200">
+                    <div class="h-48 bg-gradient-to-r from-secondary to-accent flex items-center justify-center">
+                        <i data-feather="dollar-sign" class="text-white h-16 w-16"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500">
+                            <span>Agriculture Exports</span>
+                            <span class="mx-2">•</span>
+                            <span>2025</span>
+                        </div>
+                        <h3 class="mt-2 text-xl font-semibold text-dark">Canadian Wheat in Global Supply Chains</h3>
+                        <p class="mt-4 text-gray-600">Visual summary of July export data and its strategic implications</p>
+<a href="https://huggingface.co/spaces/hamsterz/calgary-insights/resolve/main/WheatReport.pdf"
+   class="mt-6 inline-flex items-center text-primary font-medium hover:text-opacity-80"
+   target="_blank" rel="noopener noreferrer">
+   View PDF
+                            <i data-feather="arrow-right" class="ml-2 h-4 w-4"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Insight 3 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden transition duration-300 card-hover" data-aos="fade-up" data-aos-delay="300">
+                    <div class="h-48 bg-gradient-to-r from-accent to-primary flex items-center justify-center">
+                        <i data-feather="box" class="text-white h-16 w-16"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500">
+                            <span>Logistics Costs</span>
+                            <span class="mx-2">•</span>
+                            <span>2025</span>
+                        </div>
+                        <h3 class="mt-2 text-xl font-semibold text-dark">Freight Rates as Economic Signals</h3>
+                        <p class="mt-4 text-gray-600">Chart-based report connecting transport costs to infrastructure stress</p>
+<a href="https://huggingface.co/spaces/hamsterz/calgary-insights/resolve/main/LogisticsReport.pdf"
+   class="mt-6 inline-flex items-center text-primary font-medium hover:text-opacity-80"
+   target="_blank" rel="noopener noreferrer">
+   View PDF
+                            <i data-feather="arrow-right" class="ml-2 h-4 w-4"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+
+        </div>
+    </div>
+
+<!-- Footer Call to Action -->
+<section class="bg-blue-600 text-white py-12">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h2 class="text-2xl font-semibold mb-4">Connect on LinkedIn</h2>
+    
+    <div class="flex justify-center">
+      <a href="https://www.linkedin.com/in/hamzaabdi1000" 
+         target="_blank" 
+         rel="noopener noreferrer"
+         class="bg-blue-700 text-white font-semibold px-6 py-2 rounded hover:bg-blue-800 transition inline-block">
+        <i class="fab fa-linkedin mr-2"></i> Follow on LinkedIn
+      </a>
+    </div>
+  </div>
+</section>
+
+    <!-- Footer -->
+<footer id="contact" class="bg-gray-900 text-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      
+      <!-- Column 1: Logo + Description -->
+      <div>
+        <div class="flex items-center space-x-2">
+          <i data-feather="bar-chart-2" class="text-blue-500 h-6 w-6"></i>
+          <span class="text-xl font-bold text-white">Calgary Insights</span>
+        </div>
+        <p class="mt-4 text-sm text-gray-300">
+          Independent analysis of Calgary’s supply chains and economic landscape.
+        </p>
+      </div>
+
+      <!-- Column 2: Sections -->
+      <div>
+        <h3 class="text-lg font-semibold mb-4">Sections</h3>
+        <ul class="space-y-2 text-sm text-gray-300">
+          <li><a href="#overview" class="hover:text-white">Overview</a></li>
+          <li><a href="#energy" class="hover:text-white">Energy</a></li>
+          <li><a href="#agriculture" class="hover:text-white">Agriculture</a></li>
+          <li><a href="#aviation" class="hover:text-white">Aviation</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Resources -->
+      <div>
+        <h3 class="text-lg font-semibold mb-4">Resources</h3>
+        <ul class="space-y-2 text-sm text-gray-300">
+          <li><a href="#insights" class="hover:text-white">Insights</a></li>
+          <li><a href="#casestudies" class="hover:text-white">Case Studies</a></li>
+          <li><a href="#risk" class="hover:text-white">Risk Analysis</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 4: Connect -->
+      <div>
+        <h3 class="text-lg font-semibold mb-4">Connect</h3>
+        <ul class="space-y-2 text-sm text-gray-300">
+          <li><a href="#about" class="hover:text-white">About</a></li>
+          <li><a href="#contact" class="hover:text-white">Contact</a></li>
+          <li class="flex space-x-4 mt-2">
+            <a href="https://www.linkedin.com/in/hamzaabdi1000" target="_blank" class="hover:text-white"><i class="fab fa-linkedin-in"></i></a>
+            <a href="mailto:hamzaabdi1000@gmail.com" class="hover:text-white"><i class="fas fa-envelope"></i></a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Bottom copyright -->
+    <div class="mt-12 pt-8 border-t border-gray-700 text-center text-sm text-gray-400">
+      © 2025 Calgary Supply Chain & Economic Insights. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+    </script>
+    <script>feather.replace();</script>
+    <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggle = document.getElementById("menu-toggle");
+    const menu = document.getElementById("mobile-menu");
+
+    toggle.addEventListener("click", () => {
+      menu.classList.toggle("hidden");
+    });
+  });
+</script>
+</body>
+</html>

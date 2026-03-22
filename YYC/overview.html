@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calgary's Supply Chain & Economy Overview | Calgary Insights</title>
+    <!-- Tailwind CSS CDN -->
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+<!-- Font Awesome (Icons) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(26, 32, 44, 0.95) 0%, rgba(0, 86, 179, 0.85) 100%);
+        }
+        .chart-placeholder {
+            background: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%);
+        }
+        .section-icon {
+            background: linear-gradient(135deg, #0056b3 0%, #1a936f 100%);
+        }
+          /* smooth anchor scroll + sticky header offset */
+  html { scroll-behavior: smooth; }
+  :target { scroll-margin-top: 80px; } /* adjust if your header height differs */
+    </style>
+</head>
+<body class="bg-gray-50 text-dark">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <i data-feather="bar-chart-2" class="text-primary h-8 w-8"></i>
+                        <span class="ml-2 text-xl font-bold text-dark">Calgary Insights</span>
+                    </div>
+                </div>
+<div class="hidden md:ml-6 md:flex md:items-center md:space-x-8">
+  <a href="index.html"              class="text-gray-600 hover:text-primary px-3 py-2 text-sm font-medium">Home</a>
+<a href="#overview-energy" class="text-primary px-3 py-2 text-sm font-medium border-b-2 border-primary">Overview</a>
+<a href="#overview-energy" class="text-gray-600 hover:text-primary px-3 py-2 text-sm">Energy</a>
+<a href="#overview-agriculture" class="text-gray-600 hover:text-primary px-3 py-2 text-sm">Agriculture</a>
+<a href="#overview-aviation" class="text-gray-600 hover:text-primary px-3 py-2 text-sm">Aviation</a>
+<a href="#overview-diversification" class="text-gray-600 hover:text-primary px-3 py-2 text-sm">Insights</a>
+</div>
+                <div class="-mr-2 flex items-center md:hidden">
+                    <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary" aria-controls="mobile-menu" aria-expanded="false">
+                        <i data-feather="menu"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Mobile menu -->
+<div id="mobile-menu" class="md:hidden hidden">
+  <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+    <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-white hover:bg-primary">Home</a>
+    <a href="overview.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-white hover:bg-primary">Overview</a>
+    <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-white bg-primary">Contact</a>
+  </div>
+</div>
+
+    <!-- Hero Section -->
+    <div class="hero-gradient text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-5xl font-bold leading-tight" data-aos="fade-up">Calgary's Supply Chain & Economy Overview</h1>
+                <p class="mt-4 text-xl md:text-2xl text-gray-200 max-w-4xl mx-auto" data-aos="fade-up" data-aos-delay="100">Understanding Calgary's pivotal role in global energy, agriculture, and logistics networks</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Breadcrumb -->
+    <div class="bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div class="flex items-center space-x-2 text-sm">
+                <a href="index.html" class="text-gray-600 hover:text-primary">Home</a>
+                <span class="text-gray-400">/</span>
+                <span class="text-primary">Overview</span>
+            </div>
+        </div>
+    </div>
+
+<!-- Main Content -->
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+    <!-- Content -->
+    <div class="lg:col-span-2">
+      <div class="prose max-w-none" data-aos="fade-up">
+        <p class="text-lg text-gray-700">
+          Calgary serves as a critical hub in Canada's economic infrastructure, connecting resource production in Western Canada to global markets through sophisticated supply chain networks. This evergreen reference piece examines Calgary's role across key industries — energy, agriculture, logistics, and diversification — by layering national, provincial, and local context.
+        </p>
+
+        <!-- ENERGY -->
+        <h2 id="overview-energy" class="text-2xl font-bold mt-12">Energy Sector Dominance</h2>
+        <p><strong>Canada:</strong> Canada ranks among the top five global producers of oil and natural gas. The energy sector contributes more than 10% of the national GDP and over a quarter of total exports. Canada's energy policies emphasize responsible extraction, Indigenous partnerships, and investment in clean technologies such as carbon capture and hydrogen.</p>
+        <p><strong>Alberta:</strong> Alberta alone accounts for over 80% of Canadian oil production, largely through its vast oil sands and conventional crude reserves. The province also leads in natural gas, hosting major upstream and midstream infrastructure. Alberta's Energy Regulator and provincial tax framework play central roles in shaping the industry.</p>
+        <p><strong>Calgary:</strong> Calgary is often referred to as the "Houston of Canada." It hosts the headquarters of nearly every major Canadian energy firm, along with global offices of multinationals. Beyond corporate presence, Calgary houses a dense ecosystem of engineering consultancies, finance specialists, energy law firms, and software startups servicing upstream, midstream, and downstream functions. Calgary is also a key hub for ESG reporting, emissions tracking, and energy data analytics.</p>
+
+        <!-- AGRICULTURE -->
+        <h2 id="overview-agriculture" class="text-2xl font-bold mt-12">Agricultural Export Powerhouse</h2>
+        <p><strong>Canada:</strong> Canada is a top-5 global agricultural exporter. The prairie provinces — Alberta, Saskatchewan, and Manitoba — supply much of the world's wheat, canola, lentils, and barley. Canada also plays a strategic role in food security through its stable, surplus-based exports to food-insecure regions. The Canadian Grain Commission and Canadian Food Inspection Agency ensure quality and phytosanitary compliance.</p>
+        <p><strong>Alberta:</strong> Alberta produces over 20 million tonnes of crops annually, including high-protein wheat and malting barley. It is also the center of Canadian cattle ranching, contributing nearly 40% of beef production. Alberta’s feedlots, processing plants, and proximity to U.S. markets give it a comparative advantage. Water management, irrigation systems, and climate resilience strategies are increasingly shaping agricultural policy.</p>
+        <p><strong>Calgary:</strong> Calgary acts as the financial and logistical command center for Alberta’s agri-food value chain. It is home to major commodity traders, agri-fintech startups, livestock analysts, and regulatory offices. The city is strategically positioned along Class I rail lines that move grain west to Vancouver and south into U.S. milling centers. Calgary also plays host to international agri-business events such as the Global Ag Risk Symposium and Stampede Investment Forum.</p>
+
+        <!-- AVIATION & LOGISTICS -->
+        <h2 id="overview-aviation" class="text-2xl font-bold mt-12">Aviation & Logistics Hub</h2>
+        <p><strong>Canada:</strong> As the world’s second-largest country by landmass, Canada relies on a complex network of air, rail, road, and maritime routes. Supply chain fluidity is critical to moving goods from inland regions to global ports. Trade-enabling infrastructure like airports and cross-border trucking corridors are prioritized in federal investments such as the National Trade Corridors Fund.</p>
+        <p><strong>Alberta:</strong> Alberta is a landlocked province, but it punches above its weight in logistics thanks to a dense network of highways, rail lines, and two major airports. The Calgary-Edmonton corridor is one of Canada's busiest freight routes. Alberta’s role in transporting goods like crude oil, grain, and manufactured products makes it vital to the national economy.</p>
+        <p><strong>Calgary:</strong> Calgary International Airport (YYC) is Canada's third-busiest airport and a major cargo gateway. YYC offers dedicated cargo aprons, bonded warehouses, and customs pre-clearance for U.S. shipments. The city is also a magnet for 3PL providers, cross-docking hubs, and warehouse automation startups. Calgary’s inland port status and proximity to the U.S. border enhance its logistics competitiveness. Cold chain logistics are growing rapidly due to demand for pharma and fresh agri-exports.</p>
+
+        <!-- DIVERSIFICATION -->
+        <h2 id="overview-diversification" class="text-2xl font-bold mt-12">Economic Diversification</h2>
+        <p><strong>Canada:</strong> Canada's post-pandemic recovery has emphasized green jobs, digital infrastructure, and R&D funding to reduce reliance on volatile commodities. Technology, renewable energy, and advanced manufacturing are cornerstones of the new industrial policy. National programs such as the Strategic Innovation Fund and SR&ED tax credits support this transition.</p>
+        <p><strong>Alberta:</strong> Alberta has launched aggressive diversification efforts including the Alberta Innovates agency, tech tax incentives, and partnerships with universities. The province is cultivating clusters in cleantech, fintech, agricultural technology, and aerospace manufacturing. Job creation is shifting from extraction to innovation hubs.</p>
+        <p><strong>Calgary:</strong> Calgary has emerged as a western tech capital, attracting over $1 billion in venture capital since 2021. The city boasts Canada’s highest per capita concentration of high-tech workers outside Toronto. Platforms such as Platform Calgary, Energy Transition Centre, and the Alberta Machine Intelligence Institute (Amii) are fostering an innovation culture. Additionally, the city is seeing a boom in coworking spaces, startup accelerators, and global events like Inventures.</p>
+      </div>
+
+      <!-- KEY TAKEAWAYS -->
+      <div class="mt-12 bg-primary bg-opacity-5 p-6 rounded-xl border border-primary border-opacity-20" data-aos="fade-up">
+        <h3 class="text-xl font-semibold text-dark">Key Takeaways</h3>
+        <ul class="mt-4 space-y-2">
+          <li class="flex items-start">
+            <i data-feather="check-circle" class="text-primary mt-1 mr-2 flex-shrink-0"></i>
+            <span>Calgary is Canada’s strategic command post for oil and gas, housing leadership, analytics, and engineering for global operations.</span>
+          </li>
+          <li class="flex items-start">
+            <i data-feather="check-circle" class="text-primary mt-1 mr-2 flex-shrink-0"></i>
+            <span>Its infrastructure supports world-class agricultural supply chains, particularly for grains, beef, and fertilizer.</span>
+          </li>
+          <li class="flex items-start">
+            <i data-feather="check-circle" class="text-primary mt-1 mr-2 flex-shrink-0"></i>
+            <span>YYC’s logistics and air cargo assets offer critical trade access for Alberta’s landlocked economy.</span>
+          </li>
+          <li class="flex items-start">
+            <i data-feather="check-circle" class="text-primary mt-1 mr-2 flex-shrink-0"></i>
+            <span>Tech-driven diversification is positioning Calgary as a resilient, future-ready metro with global relevance.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+            
+            <!-- Sidebar -->
+            <div class="lg:col-span-1">
+                <div class="bg-white rounded-xl shadow-sm p-6 sticky top-6" data-aos="fade-left">
+                    <h3 class="text-lg font-semibold text-dark">Quick Links</h3>
+                    <div class="mt-4 space-y-4">
+<a href="#overview-energy" class="flex items-center p-3 rounded-lg hover:bg-gray-50 transition">
+    <div class="section-icon p-3 rounded-full text-white">
+        <i data-feather="zap" class="h-5 w-5"></i>
+    </div>
+    <span class="ml-3 font-medium">Energy Markets</span>
+</a>
+<a href="#overview-agriculture" class="flex items-center p-3 rounded-lg hover:bg-gray-50 transition">
+    <div class="section-icon p-3 rounded-full text-white">
+        <i data-feather="package" class="h-5 w-5"></i>
+    </div>
+    <span class="ml-3 font-medium">Agriculture</span>
+</a>
+<a href="#overview-aviation" class="flex items-center p-3 rounded-lg hover:bg-gray-50 transition">
+    <div class="section-icon p-3 rounded-full text-white">
+        <i data-feather="truck" class="h-5 w-5"></i>
+    </div>
+    <span class="ml-3 font-medium">Aviation & Logistics</span>
+</a>
+<a href="#overview-diversification" class="flex items-center p-3 rounded-lg hover:bg-gray-50 transition">
+    <div class="section-icon p-3 rounded-full text-white">
+        <i data-feather="alert-triangle" class="h-5 w-5"></i>
+    </div>
+    <span class="ml-3 font-medium">Economic Diversification</span>
+</a>
+                    </div>
+                    
+<div class="mt-8">
+  <h3 class="text-sm font-semibold text-dark">Follow for Weekly Insights</h3>
+  <p class="text-gray-600 text-sm mt-1">
+    I post Calgary-focused supply chain dashboards weekly on LinkedIn.
+  </p>
+  <a href="https://www.linkedin.com/in/hamzaabdi1000" target="_blank" rel="noopener noreferrer"
+     class="mt-3 inline-block bg-primary text-white px-4 py-2 rounded-md hover:bg-opacity-90 transition text-sm text-center">
+    Connect on LinkedIn
+  </a>
+</div>
+                    
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+<!-- Footer -->
+<!-- Footer Call to Action -->
+<section class="bg-blue-600 text-white py-12">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h2 class="text-2xl font-semibold mb-4">Connect on LinkedIn</h2>
+    
+    <div class="flex justify-center">
+      <a href="https://www.linkedin.com/in/hamzaabdi1000" 
+         target="_blank" 
+         rel="noopener noreferrer"
+         class="bg-blue-700 text-white font-semibold px-6 py-2 rounded hover:bg-blue-800 transition inline-block">
+        <i class="fab fa-linkedin mr-2"></i> Follow on LinkedIn
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer id="contact" class="bg-gray-900 text-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      
+      <!-- Column 1: Logo + Description -->
+      <div>
+        <div class="flex items-center space-x-2">
+          <i data-feather="bar-chart-2" class="text-blue-500 h-6 w-6"></i>
+          <span class="text-xl font-bold text-white">Calgary Insights</span>
+        </div>
+        <p class="mt-4 text-sm text-gray-300">
+          Independent analysis of Calgary’s supply chains and economic landscape.
+        </p>
+      </div>
+
+      <!-- Column 2: Sections -->
+      <div>
+        <h3 class="text-lg font-semibold mb-4">Sections</h3>
+        <ul class="space-y-2 text-sm text-gray-300">
+          <li><a href="#overview" class="hover:text-white">Overview</a></li>
+          <li><a href="#energy" class="hover:text-white">Energy</a></li>
+          <li><a href="#agriculture" class="hover:text-white">Agriculture</a></li>
+          <li><a href="#aviation" class="hover:text-white">Aviation</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Resources -->
+      <div>
+        <h3 class="text-lg font-semibold mb-4">Resources</h3>
+        <ul class="space-y-2 text-sm text-gray-300">
+          <li><a href="#insights" class="hover:text-white">Insights</a></li>
+          <li><a href="#casestudies" class="hover:text-white">Case Studies</a></li>
+          <li><a href="#risk" class="hover:text-white">Risk Analysis</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 4: Connect -->
+      <div>
+        <h3 class="text-lg font-semibold mb-4">Connect</h3>
+        <ul class="space-y-2 text-sm text-gray-300">
+          <li><a href="#about" class="hover:text-white">About</a></li>
+          <li><a href="#contact" class="hover:text-white">Contact</a></li>
+          <li class="flex space-x-4 mt-2">
+            <a href="https://www.linkedin.com/in/hamzaabdi1000" target="_blank" class="hover:text-white"><i class="fab fa-linkedin-in"></i></a>
+            <a href="mailto:hamzaabdi1000@gmail.com" class="hover:text-white"><i class="fas fa-envelope"></i></a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Bottom copyright -->
+    <div class="mt-12 pt-8 border-t border-gray-700 text-center text-sm text-gray-400">
+      © 2025 Calgary Supply Chain & Economic Insights. All rights reserved.
+    </div>
+  </div>
+</footer>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+    </script>
+    <script>feather.replace();</script>
+    <script>
+  // Scroll to section if a hash exists in URL
+  window.addEventListener('DOMContentLoaded', () => {
+    const hash = window.location.hash;
+    if (hash) {
+      const target = document.querySelector(hash);
+      if (target) {
+        setTimeout(() => {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }, 100); // slight delay to ensure DOM is ready
+      }
+    }
+  });
+</script>
+<script>
+  const mobileMenuButton = document.querySelector('[aria-controls="mobile-menu"]');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  mobileMenuButton.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+</script>
+</body>
+</html>
+
+

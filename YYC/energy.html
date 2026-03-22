@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Energy Dashboard | Calgary Insights</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 text-gray-900">
+
+  <header class="bg-white shadow p-4">
+    <div class="max-w-6xl mx-auto flex justify-between items-center">
+      <h1 class="text-xl font-semibold text-blue-700">Calgary Insights</h1>
+      <a href="index.html" class="text-sm text-blue-500 hover:underline">← Back to Home</a>
+    </div>
+  </header>
+
+  <main class="py-12 px-4">
+    <section class="max-w-5xl mx-auto">
+      <h2 class="text-3xl font-bold mb-4 text-center">Energy Market Dashboard</h2>
+      <p class="text-center text-gray-600 mb-6">
+        Interactive chart tracking historical Brent and WTI crude oil prices — plus the spread — to understand trends impacting Calgary-based energy importers.
+      </p>
+
+      <div class="bg-white shadow rounded-lg p-4 overflow-hidden">
+        <iframe 
+          src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTiIYgULCytUOGgQVi2oGOMhCDRyZJkLykIf39KKOvX94fw7m-vkl8ZtWSGjLZzEMFCeywUyQhbZkXD/pubchart?oid=602233470&amp;format=interactive" 
+          width="100%" 
+          height="500" 
+          frameborder="0" 
+          scrolling="no">
+        </iframe>
+        <!-- Commentary Section -->
+<div class="mt-8">
+  <h3 class="text-xl font-semibold mb-2">Key Observations</h3>
+  <ul class="list-disc ml-6 text-gray-600 space-y-2">
+    <li>
+      Brent and WTI prices have followed a similar long-term trend, with sharp peaks around 2008 and 2011 due to global supply shocks.
+    </li>
+    <li>
+      The <strong>spread</strong> between Brent and WTI widened significantly between 2011 and 2015, driven by U.S. shale production and infrastructure bottlenecks.
+    </li>
+    <li>
+      Since 2020, prices have been more volatile, reflecting COVID-19 disruptions and geopolitical tensions (e.g., Russia-Ukraine).
+    </li>
+    <li>
+      As of 2024, Brent remains slightly above WTI, with a relatively stable spread — suggesting more predictable import costs for Calgary-based refiners.
+    </li>
+  </ul>
+
+  <p class="mt-4 italic text-gray-500">
+    TL;DR: Calgary-based businesses importing oil should expect relatively stable Brent-WTI spreads in the short term, but should monitor geopolitical shocks closely.
+  </p>
+</div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="text-center text-sm text-gray-500 mt-12 py-4">
+    © 2025 Calgary Insights. Built by Hamza.
+  </footer>
+</body>
+</html>

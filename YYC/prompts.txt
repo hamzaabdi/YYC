@@ -1,0 +1,57 @@
+Project Title: Calgary Supply Chain & Economic Insights
+
+Goal: Build a visually stunning, data-driven website that positions me as a thought leader on Calgary’s economy and global supply chain disruptions. The site should combine evergreen insights with dynamic dashboards that update automatically when I upload new data. It must attract recruiters, employers, and professionals in Calgary’s business ecosystem.
+
+Design Style:
+	•	Clean, professional, modern (inspired by The Economist + World Bank dashboards).
+	•	Neutral/dark theme with strong accent colors (blue, green, or gold).
+	•	Infographics + charts integrated into every article.
+	•	Responsive design for desktop + mobile.
+
+Core Sections:
+	1.	Homepage
+	•	Headline: “Independent Insights on Calgary’s Supply Chains & Economy.”
+	•	Subheadline: “Analyzing how global disruptions ripple into Calgary’s energy, agriculture, logistics, and aviation sectors.”
+	•	Featured dashboards + previews of top articles.
+	•	CTA: “Follow me on LinkedIn for weekly updates.”
+	2.	Calgary’s Supply Chain & Economy Overview (Evergreen)
+	•	SEO pillar page describing Calgary’s role in oil, gas, agriculture, aviation, and logistics.
+	•	Permanent reference piece.
+	3.	Energy & Fuel Supply Chains
+	•	Dashboard: Brent Crude, WTI, Jet Fuel vs. CAD exchange rate.
+	•	Static analysis of how fuel prices impact Calgary businesses.
+	4.	Agriculture & Food Logistics
+	•	Static insights: grain, beef, canola exports from Alberta.
+	•	Dashboard: Wheat/Canola price trends + Alberta export volumes.
+	5.	Aviation & Air Cargo (YYC Hub)
+	•	Calgary International Airport’s role in cargo & global trade.
+	•	Dashboard: YYC cargo throughput + shipping rates from Asia.
+	6.	Business Supply Chain Risks 2025
+	•	Static playbook: FX swings, inflation, container costs.
+	•	Dashboard: CAD/USD exchange rates + Vancouver–Calgary freight costs.
+	7.	Insights / Blog (Dynamic Weekly Posts)
+	•	Example: “This week’s jet fuel spike and what it means for Calgary importers.”
+	•	Funnel to LinkedIn for discussion.
+	8.	Case Studies Library (Evergreen)
+	•	Suez Canal blockage, COVID disruptions, Panama drought.
+	•	Each case linked to how Calgary was affected.
+	9.	About Me
+	•	Diploma in Supply Chain Management (SAIT).
+	•	BBA in General Management (in progress, University of Lethbridge).
+	•	Lean Six Sigma Green Belt.
+	•	Founder of SourceProof (supply chain verification).
+	10.	Contact / Newsletter
+	•	Simple signup form: “Get Calgary-focused supply chain insights straight to your inbox.”
+	•	Option to connect via LinkedIn.
+
+Dynamic Features:
+	•	Embedded dashboards (Google Sheets → Looker Studio or Power BI).
+	•	Dashboards update automatically when I upload fresh data.
+	•	Tags & categories for SEO (“Energy,” “Agriculture,” “Logistics,” “Macroeconomics”).
+	•	Social sharing + LinkedIn integration.
+
+Tone & Content Style:
+	•	Clear, data-driven, accessible.
+	•	Blend static evergreen explainers with dynamic dashboards.
+	•	Visual-first (charts > walls of text).
+	•	Designed for Calgary businesses, recruiters, and professionals.
