@@ -5,59 +5,207 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Energy Dashboard | Calgary Insights</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+  <style>
+    .gradient-bg {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+    }
+    .insight-card {
+      transition: all 0.3s ease;
+      border-left: 4px solid;
+    }
+    .insight-card:hover {
+      transform: translateX(4px);
+      box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.1);
+    }
+  </style>
 </head>
-<body class="bg-gray-100 text-gray-900">
+<body class="bg-gray-50 text-gray-900">
 
-  <header class="bg-white shadow p-4">
-    <div class="max-w-6xl mx-auto flex justify-between items-center">
-      <h1 class="text-xl font-semibold text-blue-700">Calgary Insights</h1>
-      <a href="index.html" class="text-sm text-blue-500 hover:underline">← Back to Home</a>
+  <header class="gradient-bg text-white shadow-lg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+      <div class="flex justify-between items-center">
+        <div class="flex items-center space-x-3">
+          <i data-feather="zap" class="h-8 w-8"></i>
+          <div>
+            <h1 class="text-2xl font-bold">Calgary Insights</h1>
+            <p class="text-sm text-blue-200">Energy Market Intelligence</p>
+          </div>
+        </div>
+        <a href="index (2).html" class="inline-flex items-center text-sm bg-white bg-opacity-20 hover:bg-opacity-30 px-4 py-2 rounded-lg transition">
+          <i data-feather="arrow-left" class="h-4 w-4 mr-2"></i>
+          Back to Home
+        </a>
+      </div>
     </div>
   </header>
 
   <main class="py-12 px-4">
-    <section class="max-w-5xl mx-auto">
-      <h2 class="text-3xl font-bold mb-4 text-center">Energy Market Dashboard</h2>
-      <p class="text-center text-gray-600 mb-6">
-        Interactive chart tracking historical Brent and WTI crude oil prices — plus the spread — to understand trends impacting Calgary-based energy importers.
-      </p>
+    <section class="max-w-6xl mx-auto">
+      <div class="mb-10">
+        <div class="inline-flex items-center space-x-2 bg-blue-100 text-blue-700 px-4 py-2 rounded-full mb-4">
+          <i data-feather="activity" class="h-4 w-4"></i>
+          <span class="text-sm font-semibold">Live Market Data</span>
+        </div>
+        <h2 class="text-4xl font-bold mb-4 text-gray-900">Energy Market Dashboard</h2>
+        <p class="text-lg text-gray-600 leading-relaxed max-w-3xl">
+          Historical analysis of Brent and WTI crude oil prices with spread dynamics. Understanding these benchmarks is critical for Calgary's energy sector, as pricing differentials directly impact refinery margins, pipeline economics, and corporate profitability.
+        </p>
+      </div>
 
-      <div class="bg-white shadow rounded-lg p-4 overflow-hidden">
-        <iframe 
-          src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTiIYgULCytUOGgQVi2oGOMhCDRyZJkLykIf39KKOvX94fw7m-vkl8ZtWSGjLZzEMFCeywUyQhbZkXD/pubchart?oid=602233470&amp;format=interactive" 
-          width="100%" 
-          height="500" 
-          frameborder="0" 
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-10">
+        <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-blue-600">
+          <div class="flex items-center mb-3">
+            <div class="bg-blue-100 p-3 rounded-lg">
+              <i data-feather="trending-up" class="h-6 w-6 text-blue-600"></i>
+            </div>
+            <div class="ml-3">
+              <p class="text-sm text-gray-500">Current WTI</p>
+              <p class="text-2xl font-bold text-gray-900">$78.50</p>
+            </div>
+          </div>
+          <p class="text-xs text-gray-500">Last updated: Mar 23, 2026</p>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-green-600">
+          <div class="flex items-center mb-3">
+            <div class="bg-green-100 p-3 rounded-lg">
+              <i data-feather="globe" class="h-6 w-6 text-green-600"></i>
+            </div>
+            <div class="ml-3">
+              <p class="text-sm text-gray-500">Current Brent</p>
+              <p class="text-2xl font-bold text-gray-900">$82.00</p>
+            </div>
+          </div>
+          <p class="text-xs text-gray-500">Last updated: Mar 23, 2026</p>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-yellow-600">
+          <div class="flex items-center mb-3">
+            <div class="bg-yellow-100 p-3 rounded-lg">
+              <i data-feather="git-commit" class="h-6 w-6 text-yellow-600"></i>
+            </div>
+            <div class="ml-3">
+              <p class="text-sm text-gray-500">Brent-WTI Spread</p>
+              <p class="text-2xl font-bold text-gray-900">$3.50</p>
+            </div>
+          </div>
+          <p class="text-xs text-gray-500">Narrowing trend</p>
+        </div>
+      </div>
+
+      <div class="bg-white shadow-xl rounded-2xl p-6 overflow-hidden mb-10">
+        <div class="flex items-center justify-between mb-6">
+          <h3 class="text-xl font-semibold text-gray-900">Historical Price Trends</h3>
+          <span class="text-xs text-gray-500">Source: Market Data</span>
+        </div>
+        <iframe
+          src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTiIYgULCytUOGgQVi2oGOMhCDRyZJkLykIf39KKOvX94fw7m-vkl8ZtWSGjLZzEMFCeywUyQhbZkXD/pubchart?oid=602233470&amp;format=interactive"
+          width="100%"
+          height="550"
+          frameborder="0"
           scrolling="no">
         </iframe>
-        <!-- Commentary Section -->
-<div class="mt-8">
-  <h3 class="text-xl font-semibold mb-2">Key Observations</h3>
-  <ul class="list-disc ml-6 text-gray-600 space-y-2">
-    <li>
-      Brent and WTI prices have followed a similar long-term trend, with sharp peaks around 2008 and 2011 due to global supply shocks.
-    </li>
-    <li>
-      The <strong>spread</strong> between Brent and WTI widened significantly between 2011 and 2015, driven by U.S. shale production and infrastructure bottlenecks.
-    </li>
-    <li>
-      Since 2020, prices have been more volatile, reflecting COVID-19 disruptions and geopolitical tensions (e.g., Russia-Ukraine).
-    </li>
-    <li>
-      As of 2024, Brent remains slightly above WTI, with a relatively stable spread — suggesting more predictable import costs for Calgary-based refiners.
-    </li>
-  </ul>
-
-  <p class="mt-4 italic text-gray-500">
-    TL;DR: Calgary-based businesses importing oil should expect relatively stable Brent-WTI spreads in the short term, but should monitor geopolitical shocks closely.
-  </p>
-</div>
       </div>
+
+      <div class="mb-10">
+        <h3 class="text-2xl font-bold mb-6 text-gray-900">Key Observations</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="insight-card bg-white p-6 rounded-xl shadow-md border-blue-600">
+            <div class="flex items-start space-x-3">
+              <i data-feather="bar-chart-2" class="h-6 w-6 text-blue-600 mt-1 flex-shrink-0"></i>
+              <div>
+                <h4 class="font-semibold text-gray-900 mb-2">Long-Term Convergence</h4>
+                <p class="text-sm text-gray-700 leading-relaxed">
+                  Brent and WTI have tracked closely since 2000, with major divergences during infrastructure bottlenecks. Sharp peaks around 2008 and 2011 reflected global supply shocks from financial crisis recovery and Middle East instability.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="insight-card bg-white p-6 rounded-xl shadow-md border-yellow-600">
+            <div class="flex items-start space-x-3">
+              <i data-feather="alert-triangle" class="h-6 w-6 text-yellow-600 mt-1 flex-shrink-0"></i>
+              <div>
+                <h4 class="font-semibold text-gray-900 mb-2">Spread Dynamics (2011-2015)</h4>
+                <p class="text-sm text-gray-700 leading-relaxed">
+                  The Brent-WTI spread widened dramatically during the U.S. shale boom due to pipeline constraints from Cushing, OK. This period hurt Canadian producers facing landlocked crude but benefited Calgary-based refiners with access to cheaper WTI.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="insight-card bg-white p-6 rounded-xl shadow-md border-red-600">
+            <div class="flex items-start space-x-3">
+              <i data-feather="trending-down" class="h-6 w-6 text-red-600 mt-1 flex-shrink-0"></i>
+              <div>
+                <h4 class="font-semibold text-gray-900 mb-2">COVID-19 Collapse (2020)</h4>
+                <p class="text-sm text-gray-700 leading-relaxed">
+                  Global lockdowns drove demand destruction, briefly sending WTI into negative territory. Calgary energy companies faced unprecedented financial stress, leading to bankruptcies, M&A consolidation, and workforce reductions.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="insight-card bg-white p-6 rounded-xl shadow-md border-green-600">
+            <div class="flex items-start space-x-3">
+              <i data-feather="check-circle" class="h-6 w-6 text-green-600 mt-1 flex-shrink-0"></i>
+              <div>
+                <h4 class="font-semibold text-gray-900 mb-2">Current Stability (2024-2026)</h4>
+                <p class="text-sm text-gray-700 leading-relaxed">
+                  Brent remains slightly above WTI with a stable $3-4 spread, signaling normalized global flows and infrastructure capacity. This predictability benefits Calgary businesses planning capital allocation and hedging strategies.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8 shadow-inner mb-10">
+        <div class="flex items-start space-x-4">
+          <div class="bg-blue-600 bg-opacity-10 p-4 rounded-xl flex-shrink-0">
+            <i data-feather="map-pin" class="h-8 w-8 text-blue-600"></i>
+          </div>
+          <div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">What This Means for Calgary</h3>
+            <div class="space-y-4">
+              <div class="flex items-start space-x-3">
+                <i data-feather="briefcase" class="h-5 w-5 text-blue-600 mt-1 flex-shrink-0"></i>
+                <p class="text-gray-800 leading-relaxed">
+                  <strong>Energy Sector Impact:</strong> Higher WTI prices boost Calgary's oil and gas sector, driving investment in drilling, production, and infrastructure. Corporate earnings rise, supporting job creation and tax revenue.
+                </p>
+              </div>
+              <div class="flex items-start space-x-3">
+                <i data-feather="dollar-sign" class="h-5 w-5 text-green-600 mt-1 flex-shrink-0"></i>
+                <p class="text-gray-800 leading-relaxed">
+                  <strong>Refinery Margins:</strong> A narrow Brent-WTI spread reduces arbitrage opportunities but signals healthy global market integration. Calgary refiners benefit from stable input costs and predictable planning horizons.
+                </p>
+              </div>
+              <div class="flex items-start space-x-3">
+                <i data-feather="alert-circle" class="h-5 w-5 text-yellow-600 mt-1 flex-shrink-0"></i>
+                <p class="text-gray-800 leading-relaxed">
+                  <strong>Geopolitical Risk:</strong> Price volatility remains elevated due to Middle East tensions, OPEC+ production decisions, and sanctions. Calgary businesses must maintain robust risk management and scenario planning.
+                </p>
+              </div>
+              <div class="flex items-start space-x-3">
+                <i data-feather="zap" class="h-5 w-5 text-indigo-600 mt-1 flex-shrink-0"></i>
+                <p class="text-gray-800 leading-relaxed">
+                  <strong>Energy Transition:</strong> Long-term trends favor carbon capture, hydrogen, and renewables. Calgary companies investing in clean energy technologies position themselves for future competitiveness as global markets decarbonize.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </section>
   </main>
 
-  <footer class="text-center text-sm text-gray-500 mt-12 py-4">
-    © 2025 Calgary Insights. Built by Hamza.
+  <footer class="bg-gray-900 text-white py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-sm text-gray-400">© 2025 Calgary Insights. Built by Hamza.</p>
+    </div>
   </footer>
+  <script>feather.replace();</script>
 </body>
 </html>

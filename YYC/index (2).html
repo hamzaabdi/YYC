@@ -39,14 +39,81 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         .hero-gradient {
-            background: linear-gradient(135deg, rgba(26, 32, 44, 0.95) 0%, rgba(0, 86, 179, 0.85) 100%);
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.97) 0%, rgba(0, 86, 179, 0.92) 50%, rgba(0, 102, 153, 0.9) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-gradient::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.4;
+        }
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(0, 0, 0, 0.05);
         }
         .card-hover:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 25px 50px -12px rgba(0, 86, 179, 0.25), 0 12px 24px -8px rgba(0, 0, 0, 0.1);
+            border-color: rgba(0, 86, 179, 0.2);
         }
         .chart-placeholder {
             background: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%);
+            transition: transform 0.3s ease;
+        }
+        .card-hover:hover .chart-placeholder {
+            transform: scale(1.05);
+        }
+        .stat-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            border-left: 4px solid;
+            transition: all 0.3s ease;
+        }
+        .stat-card:hover {
+            transform: translateX(4px);
+            box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.1);
+        }
+        .pulse-dot {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        .trend-up {
+            color: #10b981;
+        }
+        .trend-down {
+            color: #ef4444;
+        }
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.025em;
+        }
+        .insight-tag {
+            background: linear-gradient(135deg, rgba(0, 86, 179, 0.1) 0%, rgba(26, 147, 111, 0.1) 100%);
+            border: 1px solid rgba(0, 86, 179, 0.2);
+            color: #0056b3;
+        }
+        .section-divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent 0%, #0056b3 50%, transparent 100%);
+            margin: 3rem 0;
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
     </style>
     <!-- Google Analytics -->
@@ -94,26 +161,189 @@
   </div>
 </nav>
     <!-- Hero Section -->
-    <div class="hero-gradient text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
-            <div class="md:flex md:items-center md:justify-between">
-                <div class="md:w-1/2" data-aos="fade-right">
-                    <h1 class="text-4xl md:text-5xl font-bold leading-tight">Independent Insights on Calgary's Supply Chains & Economy</h1>
-                    <p class="mt-4 text-xl md:text-2xl text-gray-200">Analyzing how global disruptions ripple into Calgary's energy, agriculture, logistics, and aviation sectors.</p>
-                    <div class="mt-8 flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                        
-<a href="#latest-insights" class="border-2 border-white text-white px-6 py-3 rounded-md font-semibold hover:bg-white hover:text-dark transition text-center">
-  Read Latest
-</a>
+    <div class="hero-gradient text-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-40 relative z-10">
+            <div class="md:flex md:items-center md:justify-between md:gap-12">
+                <div class="md:w-1/2 mb-10 md:mb-0" data-aos="fade-right">
+                    <div class="inline-flex items-center space-x-2 bg-white bg-opacity-10 backdrop-blur-sm px-4 py-2 rounded-full mb-6 border border-white border-opacity-20">
+                        <span class="pulse-dot inline-block w-2 h-2 bg-green-400 rounded-full"></span>
+                        <span class="text-sm font-medium">Live Economic Intelligence</span>
+                    </div>
+                    <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight mb-6">
+                        Calgary's Economic <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-green-300">Command Center</span>
+                    </h1>
+                    <p class="mt-6 text-xl md:text-2xl text-gray-100 leading-relaxed font-light">
+                        Real-time analysis of how global supply chain disruptions impact Calgary's energy, agriculture, and logistics sectors.
+                    </p>
+                    <div class="mt-10 flex flex-col sm:flex-row gap-4">
+                        <a href="#key-indicators" class="inline-flex items-center justify-center bg-white text-dark px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                            <i data-feather="activity" class="mr-2 h-5 w-5"></i>
+                            View Key Indicators
+                        </a>
+                        <a href="#latest-insights" class="inline-flex items-center justify-center border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-dark transition">
+                            Latest Analysis
+                            <i data-feather="arrow-right" class="ml-2 h-5 w-5"></i>
+                        </a>
                     </div>
                 </div>
                 <div class="hidden md:block md:w-1/2" data-aos="fade-left">
-                    <div class="bg-white bg-opacity-10 p-6 rounded-xl backdrop-blur-sm border border-white border-opacity-20">
-<div class="h-64 rounded-lg overflow-hidden">
-  <img src="Calgary-image.jpeg" alt="Calgary skyline" class="w-full h-full object-cover" />
-</div>
-                        <p class="mt-4 text-gray-200">From rail yards to refineries, Calgary connects Canada’s energy, food, and freight corridors.
-</p>
+                    <div class="glass-effect p-8 rounded-2xl shadow-2xl">
+                        <div class="h-72 rounded-xl overflow-hidden shadow-inner mb-4">
+                            <img src="Calgary-image.jpeg" alt="Calgary skyline" class="w-full h-full object-cover" />
+                        </div>
+                        <p class="text-gray-100 text-lg leading-relaxed">
+                            From rail yards to refineries, Calgary connects Canada's energy, food, and freight corridors to global markets.
+                        </p>
+                        <div class="mt-4 flex items-center space-x-4 text-sm">
+                            <span class="flex items-center">
+                                <i data-feather="map-pin" class="h-4 w-4 mr-1 text-blue-300"></i>
+                                Calgary, AB
+                            </span>
+                            <span class="flex items-center">
+                                <i data-feather="clock" class="h-4 w-4 mr-1 text-blue-300"></i>
+                                Updated Daily
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Key Indicators Section -->
+    <div id="key-indicators" class="bg-white py-20 border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <div class="inline-flex items-center space-x-2 bg-primary bg-opacity-10 px-4 py-2 rounded-full mb-4">
+                    <i data-feather="trending-up" class="h-4 w-4 text-primary"></i>
+                    <span class="text-sm font-semibold text-primary">Real-Time Metrics</span>
+                </div>
+                <h2 class="text-4xl font-bold text-dark mb-4">Calgary Economic Indicators</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Live tracking of key economic metrics impacting Calgary's business environment and supply chains.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                <!-- Indicator 1: WTI Crude -->
+                <div class="stat-card p-6 rounded-xl shadow-md border-primary" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-start justify-between mb-3">
+                        <div class="bg-primary bg-opacity-10 p-3 rounded-lg">
+                            <i data-feather="droplet" class="h-6 w-6 text-primary"></i>
+                        </div>
+                        <span class="badge bg-green-100 text-green-700">
+                            <i data-feather="arrow-up" class="h-3 w-3 mr-1"></i> +2.3%
+                        </span>
+                    </div>
+                    <h3 class="text-3xl font-bold text-dark mb-1">$78.50</h3>
+                    <p class="text-sm text-gray-600 font-medium mb-2">WTI Crude Oil</p>
+                    <p class="text-xs text-gray-500">Per barrel (USD)</p>
+                    <div class="mt-3 pt-3 border-t border-gray-100">
+                        <p class="text-xs text-gray-600">Last updated: Mar 23, 2026</p>
+                    </div>
+                </div>
+
+                <!-- Indicator 2: CAD Exchange -->
+                <div class="stat-card p-6 rounded-xl shadow-md border-secondary" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-start justify-between mb-3">
+                        <div class="bg-secondary bg-opacity-10 p-3 rounded-lg">
+                            <i data-feather="dollar-sign" class="h-6 w-6 text-secondary"></i>
+                        </div>
+                        <span class="badge bg-red-100 text-red-700">
+                            <i data-feather="arrow-down" class="h-3 w-3 mr-1"></i> -0.8%
+                        </span>
+                    </div>
+                    <h3 class="text-3xl font-bold text-dark mb-1">$0.72</h3>
+                    <p class="text-sm text-gray-600 font-medium mb-2">CAD/USD Exchange</p>
+                    <p class="text-xs text-gray-500">Canadian Dollar strength</p>
+                    <div class="mt-3 pt-3 border-t border-gray-100">
+                        <p class="text-xs text-gray-600">Last updated: Mar 23, 2026</p>
+                    </div>
+                </div>
+
+                <!-- Indicator 3: Freight Costs -->
+                <div class="stat-card p-6 rounded-xl shadow-md border-accent" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-start justify-between mb-3">
+                        <div class="bg-accent bg-opacity-10 p-3 rounded-lg">
+                            <i data-feather="truck" class="h-6 w-6 text-accent"></i>
+                        </div>
+                        <span class="badge bg-green-100 text-green-700">
+                            <i data-feather="arrow-up" class="h-3 w-3 mr-1"></i> +5.2%
+                        </span>
+                    </div>
+                    <h3 class="text-3xl font-bold text-dark mb-1">142.8</h3>
+                    <p class="text-sm text-gray-600 font-medium mb-2">Transport CPI</p>
+                    <p class="text-xs text-gray-500">Alberta (2002=100)</p>
+                    <div class="mt-3 pt-3 border-t border-gray-100">
+                        <p class="text-xs text-gray-600">Last updated: Mar 23, 2026</p>
+                    </div>
+                </div>
+
+                <!-- Indicator 4: Wheat Exports -->
+                <div class="stat-card p-6 rounded-xl shadow-md border-primary" data-aos="fade-up" data-aos-delay="400">
+                    <div class="flex items-start justify-between mb-3">
+                        <div class="bg-primary bg-opacity-10 p-3 rounded-lg">
+                            <i data-feather="package" class="h-6 w-6 text-primary"></i>
+                        </div>
+                        <span class="badge bg-green-100 text-green-700">
+                            <i data-feather="arrow-up" class="h-3 w-3 mr-1"></i> +8.1%
+                        </span>
+                    </div>
+                    <h3 class="text-3xl font-bold text-dark mb-1">24.2M</h3>
+                    <p class="text-sm text-gray-600 font-medium mb-2">Wheat Exports</p>
+                    <p class="text-xs text-gray-500">Tonnes (crop year)</p>
+                    <div class="mt-3 pt-3 border-t border-gray-100">
+                        <p class="text-xs text-gray-600">Last updated: Jul 2024</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- What This Means Section -->
+            <div class="bg-gradient-to-br from-blue-50 to-green-50 rounded-2xl p-8 shadow-inner" data-aos="fade-up">
+                <div class="flex items-start space-x-4">
+                    <div class="bg-primary bg-opacity-10 p-3 rounded-lg flex-shrink-0">
+                        <i data-feather="info" class="h-6 w-6 text-primary"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-dark mb-4">What This Means for Calgary</h3>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-semibold text-dark mb-2 flex items-center">
+                                    <i data-feather="check-circle" class="h-4 w-4 mr-2 text-green-600"></i>
+                                    Energy Sector Impact
+                                </h4>
+                                <p class="text-gray-700 text-sm leading-relaxed">
+                                    Rising WTI prices strengthen Calgary's energy sector outlook. Higher crude values drive increased capital investment, job creation, and corporate earnings for the city's dominant industry cluster.
+                                </p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-dark mb-2 flex items-center">
+                                    <i data-feather="alert-circle" class="h-4 w-4 mr-2 text-yellow-600"></i>
+                                    Currency Pressure
+                                </h4>
+                                <p class="text-gray-700 text-sm leading-relaxed">
+                                    A weaker Canadian dollar makes imports more expensive but boosts export competitiveness for Alberta's agricultural products and manufactured goods destined for U.S. markets.
+                                </p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-dark mb-2 flex items-center">
+                                    <i data-feather="trending-up" class="h-4 w-4 mr-2 text-blue-600"></i>
+                                    Logistics Costs Rising
+                                </h4>
+                                <p class="text-gray-700 text-sm leading-relaxed">
+                                    Elevated transport CPI signals increased freight and fuel costs. Calgary businesses face higher input costs, affecting profit margins and pricing strategies across supply chains.
+                                </p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-dark mb-2 flex items-center">
+                                    <i data-feather="package" class="h-4 w-4 mr-2 text-green-600"></i>
+                                    Agriculture Surge
+                                </h4>
+                                <p class="text-gray-700 text-sm leading-relaxed">
+                                    Record wheat export volumes demonstrate strong global demand for Alberta grain. This drives revenue for agricultural producers and supports Calgary's agribusiness ecosystem.
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -121,75 +351,151 @@
     </div>
 
     <!-- Featured Charts -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div class="text-center mb-12" data-aos="fade-up">
-            <h2 class="text-3xl font-bold text-dark">Featured Charts</h2>
-            <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">Real-time data visualizations tracking Calgary's economic pulse</p>
-        </div>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Chart 1 -->
-            <div class="bg-white rounded-xl shadow-md overflow-hidden transition duration-300 card-hover" data-aos="fade-up" data-aos-delay="100">
-                <div class="p-6">
-                    <div class="flex items-center">
-                        <div class="bg-primary bg-opacity-10 p-3 rounded-full">
-                            <i data-feather="zap" class="text-primary h-6 w-6"></i>
-                        </div>
-                        <h3 class="ml-4 text-xl font-semibold text-dark">Energy Markets</h3>
-                    </div>
-<div class="chart-placeholder h-48 md:h-64 rounded-lg overflow-hidden">
-  <img src="energy-placeholder.png" class="w-full h-full object-cover" alt="Energy Market Dashboard Preview">
-</div>
-                    <p class="mt-4 text-gray-600">Tracking Calgary's key energy commodities and their impact on local businesses</p>
-<a href="energy.html" class="mt-6 inline-flex items-center text-primary font-medium hover:text-opacity-80">
-                        Explore Chart
-                        <i data-feather="arrow-right" class="ml-2 h-4 w-4"></i>
-                    </a>
+    <div class="bg-gray-50 py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <div class="inline-flex items-center space-x-2 bg-primary bg-opacity-10 px-4 py-2 rounded-full mb-4">
+                    <i data-feather="bar-chart-2" class="h-4 w-4 text-primary"></i>
+                    <span class="text-sm font-semibold text-primary">Interactive Dashboards</span>
                 </div>
+                <h2 class="text-4xl font-bold text-dark mb-4">Featured Economic Charts</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Deep-dive visualizations with historical context and forward-looking insights for Calgary's key industries.
+                </p>
             </div>
-            
-<!-- Chart 2 -->
-<div class="bg-white rounded-xl shadow-md overflow-hidden transition duration-300 card-hover" data-aos="fade-up" data-aos-delay="200">
-  <div class="p-6">
-    <div class="flex items-center">
-      <div class="bg-secondary bg-opacity-10 p-3 rounded-full">
-        <i data-feather="package" class="text-secondary h-6 w-6"></i>
-      </div>
-      <h3 class="ml-4 text-xl font-semibold text-dark">Agriculture Exports</h3>
-    </div>
-<div class="chart-placeholder h-48 md:h-64 rounded-lg overflow-hidden">
-  <img src="wheat-placeholder.png" class="w-full h-full object-cover" alt="Agriculture Market Dashboard Preview">
-</div>
-    <p class="mt-4 text-gray-600">Visualizing Canada's wheat export volumes (crop year ending in July) and their role in global supply chains.</p>
-    <a href="wheat_exports_chart.html" class="mt-6 inline-flex items-center text-primary font-medium hover:text-opacity-80">
-      Explore Chart
-      <i data-feather="arrow-right" class="ml-2 h-4 w-4"></i>
-    </a>
-  </div>
-</div>
-            
 
-<!-- Chart 3 -->
-<div class="bg-white rounded-xl shadow-md overflow-hidden transition duration-300 card-hover" data-aos="fade-up" data-aos-delay="200">
-  <div class="p-6">
-    <div class="flex items-center">
-      <div class="bg-secondary bg-opacity-10 p-3 rounded-full">
-        <i data-feather="package" class="text-secondary h-6 w-6"></i>
-      </div>
-      <h3 class="ml-4 text-xl font-semibold text-dark">Logistics Costs</h3>
-    </div>
-<div class="chart-placeholder h-48 md:h-64 rounded-lg overflow-hidden">
-  <img src="logistics-cpi-preview.png" class="w-full h-full object-cover" alt="Logistics Market Dashboard Preview">
-</div>
-    <p class="mt-4 text-gray-600">Comparing Alberta and BC's CPI to reveal regional cost shifts and logistics pressure points.</p>
-    <a href="logistics.html" class="mt-6 inline-flex items-center text-primary font-medium hover:text-opacity-80">
-      Explore Chart
-      <i data-feather="arrow-right" class="ml-2 h-4 w-4"></i>
-    </a>
-  </div>
-</div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Chart 1: Energy -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden transition duration-300 card-hover" data-aos="fade-up" data-aos-delay="100">
+                    <div class="p-6 pb-4">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center">
+                                <div class="bg-gradient-to-br from-primary to-blue-700 p-3 rounded-xl shadow-md">
+                                    <i data-feather="zap" class="text-white h-6 w-6"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h3 class="text-xl font-bold text-dark">Energy Markets</h3>
+                                    <p class="text-xs text-gray-500">Updated Mar 23, 2026</p>
+                                </div>
+                            </div>
+                            <span class="badge insight-tag">Live</span>
+                        </div>
 
+                        <div class="chart-placeholder h-48 md:h-52 rounded-xl overflow-hidden mb-4 shadow-inner">
+                            <img src="energy-placeholder.png" class="w-full h-full object-cover" alt="Energy Market Dashboard Preview">
+                        </div>
 
+                        <div class="mb-4">
+                            <div class="flex items-start space-x-2 mb-3">
+                                <i data-feather="trending-up" class="h-4 w-4 text-green-600 mt-0.5 flex-shrink-0"></i>
+                                <p class="text-sm text-gray-700 leading-relaxed">
+                                    Brent-WTI spread narrowing to $3.50/barrel, reducing import costs for Calgary refiners
+                                </p>
+                            </div>
+                            <div class="flex items-start space-x-2">
+                                <i data-feather="alert-circle" class="h-4 w-4 text-yellow-600 mt-0.5 flex-shrink-0"></i>
+                                <p class="text-sm text-gray-700 leading-relaxed">
+                                    Geopolitical tensions driving volatility in global crude benchmarks
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="pt-4 border-t border-gray-100">
+                            <a href="energy.html" class="inline-flex items-center text-primary font-semibold hover:text-opacity-80 group">
+                                Explore Full Dashboard
+                                <i data-feather="arrow-right" class="ml-2 h-4 w-4 transform group-hover:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chart 2: Agriculture -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden transition duration-300 card-hover" data-aos="fade-up" data-aos-delay="200">
+                    <div class="p-6 pb-4">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center">
+                                <div class="bg-gradient-to-br from-secondary to-green-700 p-3 rounded-xl shadow-md">
+                                    <i data-feather="package" class="text-white h-6 w-6"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h3 class="text-xl font-bold text-dark">Agriculture Exports</h3>
+                                    <p class="text-xs text-gray-500">Crop Year 2024</p>
+                                </div>
+                            </div>
+                            <span class="badge bg-green-100 text-green-700">+8.1%</span>
+                        </div>
+
+                        <div class="chart-placeholder h-48 md:h-52 rounded-xl overflow-hidden mb-4 shadow-inner">
+                            <img src="wheat-placeholder.png" class="w-full h-full object-cover" alt="Agriculture Market Dashboard Preview">
+                        </div>
+
+                        <div class="mb-4">
+                            <div class="flex items-start space-x-2 mb-3">
+                                <i data-feather="trending-up" class="h-4 w-4 text-green-600 mt-0.5 flex-shrink-0"></i>
+                                <p class="text-sm text-gray-700 leading-relaxed">
+                                    Canadian wheat exports hit 24.2M tonnes, driven by strong Asian demand
+                                </p>
+                            </div>
+                            <div class="flex items-start space-x-2">
+                                <i data-feather="globe" class="h-4 w-4 text-blue-600 mt-0.5 flex-shrink-0"></i>
+                                <p class="text-sm text-gray-700 leading-relaxed">
+                                    Rail capacity through Calgary corridor supporting export surge
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="pt-4 border-t border-gray-100">
+                            <a href="wheat_exports_chart.html" class="inline-flex items-center text-primary font-semibold hover:text-opacity-80 group">
+                                Explore Full Dashboard
+                                <i data-feather="arrow-right" class="ml-2 h-4 w-4 transform group-hover:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chart 3: Logistics -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden transition duration-300 card-hover" data-aos="fade-up" data-aos-delay="300">
+                    <div class="p-6 pb-4">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center">
+                                <div class="bg-gradient-to-br from-accent to-orange-600 p-3 rounded-xl shadow-md">
+                                    <i data-feather="truck" class="text-white h-6 w-6"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h3 class="text-xl font-bold text-dark">Logistics Costs</h3>
+                                    <p class="text-xs text-gray-500">Updated Mar 2026</p>
+                                </div>
+                            </div>
+                            <span class="badge bg-red-100 text-red-700">+5.2%</span>
+                        </div>
+
+                        <div class="chart-placeholder h-48 md:h-52 rounded-xl overflow-hidden mb-4 shadow-inner">
+                            <img src="logistics-cpi-preview.png" class="w-full h-full object-cover" alt="Logistics Market Dashboard Preview">
+                        </div>
+
+                        <div class="mb-4">
+                            <div class="flex items-start space-x-2 mb-3">
+                                <i data-feather="trending-up" class="h-4 w-4 text-red-600 mt-0.5 flex-shrink-0"></i>
+                                <p class="text-sm text-gray-700 leading-relaxed">
+                                    Alberta transport CPI outpacing BC, signaling supply chain pressure
+                                </p>
+                            </div>
+                            <div class="flex items-start space-x-2">
+                                <i data-feather="alert-triangle" class="h-4 w-4 text-yellow-600 mt-0.5 flex-shrink-0"></i>
+                                <p class="text-sm text-gray-700 leading-relaxed">
+                                    Higher fuel and labor costs impacting Calgary-based freight operators
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="pt-4 border-t border-gray-100">
+                            <a href="logistics.html" class="inline-flex items-center text-primary font-semibold hover:text-opacity-80 group">
+                                Explore Full Dashboard
+                                <i data-feather="arrow-right" class="ml-2 h-4 w-4 transform group-hover:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

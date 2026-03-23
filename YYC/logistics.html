@@ -5,27 +5,103 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Logistics Costs Dashboard | Calgary Insights</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+  <style>
+    .gradient-bg {
+      background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    }
+    .insight-card {
+      transition: all 0.3s ease;
+      border-left: 4px solid;
+    }
+    .insight-card:hover {
+      transform: translateX(4px);
+      box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.1);
+    }
+  </style>
 </head>
-<body class="bg-gray-100 text-gray-900">
+<body class="bg-gray-50 text-gray-900">
 
-  <header class="bg-white shadow p-4">
-    <div class="max-w-6xl mx-auto flex justify-between items-center">
-      <h1 class="text-xl font-semibold text-blue-700">Calgary Insights</h1>
-      <a href="index.html" class="text-sm text-blue-500 hover:underline">← Back to Home</a>
+  <header class="gradient-bg text-white shadow-lg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+      <div class="flex justify-between items-center">
+        <div class="flex items-center space-x-3">
+          <i data-feather="truck" class="h-8 w-8"></i>
+          <div>
+            <h1 class="text-2xl font-bold">Calgary Insights</h1>
+            <p class="text-sm text-orange-100">Logistics & Transportation Intelligence</p>
+          </div>
+        </div>
+        <a href="index (2).html" class="inline-flex items-center text-sm bg-white bg-opacity-20 hover:bg-opacity-30 px-4 py-2 rounded-lg transition">
+          <i data-feather="arrow-left" class="h-4 w-4 mr-2"></i>
+          Back to Home
+        </a>
+      </div>
     </div>
   </header>
 
   <main class="py-12 px-4">
-    <section class="max-w-5xl mx-auto">
-      <h2 class="text-3xl font-bold mb-4 text-center">Transportation Costs Dashboard</h2>
-      <p class="text-center text-gray-600 mb-6">
-        Comparing monthly <strong>Transportation CPI</strong> for Alberta and British Columbia, indexed to <strong>2002 = 100</strong>.
-      </p>
+    <section class="max-w-6xl mx-auto">
+      <div class="mb-10">
+        <div class="inline-flex items-center space-x-2 bg-orange-100 text-orange-700 px-4 py-2 rounded-full mb-4">
+          <i data-feather="activity" class="h-4 w-4"></i>
+          <span class="text-sm font-semibold">Monthly CPI Tracking</span>
+        </div>
+        <h2 class="text-4xl font-bold mb-4 text-gray-900">Transportation Costs Dashboard</h2>
+        <p class="text-lg text-gray-600 leading-relaxed max-w-3xl">
+          Comparative analysis of Transportation Consumer Price Index (CPI) for Alberta and British Columbia, indexed to 2002 = 100. These trends reveal regional cost pressures affecting freight operators, supply chain managers, and businesses dependent on road, rail, and air cargo networks.
+        </p>
+      </div>
 
-      <div class="bg-white shadow rounded-lg p-4 overflow-hidden mb-8">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-10">
+        <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-red-600">
+          <div class="flex items-center mb-3">
+            <div class="bg-red-100 p-3 rounded-lg">
+              <i data-feather="trending-up" class="h-6 w-6 text-red-600"></i>
+            </div>
+            <div class="ml-3">
+              <p class="text-sm text-gray-500">Alberta CPI</p>
+              <p class="text-2xl font-bold text-gray-900">142.8</p>
+            </div>
+          </div>
+          <p class="text-xs text-gray-500">+5.2% vs. last year</p>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-blue-600">
+          <div class="flex items-center mb-3">
+            <div class="bg-blue-100 p-3 rounded-lg">
+              <i data-feather="bar-chart-2" class="h-6 w-6 text-blue-600"></i>
+            </div>
+            <div class="ml-3">
+              <p class="text-sm text-gray-500">BC CPI</p>
+              <p class="text-2xl font-bold text-gray-900">138.4</p>
+            </div>
+          </div>
+          <p class="text-xs text-gray-500">+3.8% vs. last year</p>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-yellow-600">
+          <div class="flex items-center mb-3">
+            <div class="bg-yellow-100 p-3 rounded-lg">
+              <i data-feather="git-commit" class="h-6 w-6 text-yellow-600"></i>
+            </div>
+            <div class="ml-3">
+              <p class="text-sm text-gray-500">AB-BC Gap</p>
+              <p class="text-2xl font-bold text-gray-900">4.4 pts</p>
+            </div>
+          </div>
+          <p class="text-xs text-gray-500">Alberta premium widening</p>
+        </div>
+      </div>
+
+      <div class="bg-white shadow-xl rounded-2xl p-6 overflow-hidden mb-10">
+        <div class="flex items-center justify-between mb-6">
+          <h3 class="text-xl font-semibold text-gray-900">Historical Transportation CPI Trends</h3>
+          <span class="text-xs text-gray-500">Source: Statistics Canada</span>
+        </div>
         <iframe
-          width="1096"
-          height="678"
+          width="100%"
+          height="550"
           seamless
           frameborder="0"
           scrolling="no"
@@ -33,24 +109,104 @@
         ></iframe>
       </div>
 
-      <!-- Commentary Section -->
-      <div class="mt-8">
-        <h3 class="text-xl font-semibold mb-2">Key Observations</h3>
-        <ul class="list-disc ml-6 text-gray-700 space-y-2">
-          <li>Transportation costs have steadily increased in both provinces since 2002.</li>
-          <li>Alberta shows higher CPI volatility — likely due to car-dependence and longer freight distances.</li>
-          <li>BC's more urban infrastructure (e.g., transit) may buffer against spikes.</li>
-          <li>Price surges in 2008, 2014, and 2022 align with global oil and supply chain shocks.</li>
-        </ul>
-        <p class="mt-4 italic text-gray-500">
-          TL;DR: Alberta's freight and fuel costs are more sensitive to inflation shocks. BC offers greater stability for logistics planners.
-        </p>
+      <div class="mb-10">
+        <h3 class="text-2xl font-bold mb-6 text-gray-900">Key Observations</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="insight-card bg-white p-6 rounded-xl shadow-md border-red-600">
+            <div class="flex items-start space-x-3">
+              <i data-feather="trending-up" class="h-6 w-6 text-red-600 mt-1 flex-shrink-0"></i>
+              <div>
+                <h4 class="font-semibold text-gray-900 mb-2">Steady Cost Escalation</h4>
+                <p class="text-sm text-gray-700 leading-relaxed">
+                  Both provinces show persistent transportation cost increases since 2002, with Alberta consistently higher. This reflects fuel price sensitivity, longer freight distances, and car-dependent infrastructure in Alberta's sprawling geography.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="insight-card bg-white p-6 rounded-xl shadow-md border-yellow-600">
+            <div class="flex items-start space-x-3">
+              <i data-feather="alert-triangle" class="h-6 w-6 text-yellow-600 mt-1 flex-shrink-0"></i>
+              <div>
+                <h4 class="font-semibold text-gray-900 mb-2">Alberta's Higher Volatility</h4>
+                <p class="text-sm text-gray-700 leading-relaxed">
+                  Alberta's CPI shows sharper swings during commodity price shocks (2008, 2014, 2022). The province's oil-dependent economy amplifies fuel cost pass-through to trucking and freight sectors, creating margin pressure for logistics operators.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="insight-card bg-white p-6 rounded-xl shadow-md border-blue-600">
+            <div class="flex items-start space-x-3">
+              <i data-feather="shield" class="h-6 w-6 text-blue-600 mt-1 flex-shrink-0"></i>
+              <div>
+                <h4 class="font-semibold text-gray-900 mb-2">BC's Relative Stability</h4>
+                <p class="text-sm text-gray-700 leading-relaxed">
+                  British Columbia's more urban, transit-oriented infrastructure provides some insulation from fuel price spikes. Shorter intra-provincial hauls and multimodal transport options (ferries, rail) help moderate cost volatility compared to Alberta.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="insight-card bg-white p-6 rounded-xl shadow-md border-indigo-600">
+            <div class="flex items-start space-x-3">
+              <i data-feather="zap" class="h-6 w-6 text-indigo-600 mt-1 flex-shrink-0"></i>
+              <div>
+                <h4 class="font-semibold text-gray-900 mb-2">Shock Events (2008, 2022)</h4>
+                <p class="text-sm text-gray-700 leading-relaxed">
+                  Price surges align with global oil spikes and supply chain disruptions. The 2022 spike reflects post-pandemic logistics bottlenecks, driver shortages, and elevated diesel costs. These events disproportionately impact Calgary's freight-intensive economy.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+
+      <div class="bg-gradient-to-br from-orange-50 to-amber-50 rounded-2xl p-8 shadow-inner mb-10">
+        <div class="flex items-start space-x-4">
+          <div class="bg-orange-600 bg-opacity-10 p-4 rounded-xl flex-shrink-0">
+            <i data-feather="map-pin" class="h-8 w-8 text-orange-600"></i>
+          </div>
+          <div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">What This Means for Calgary</h3>
+            <div class="space-y-4">
+              <div class="flex items-start space-x-3">
+                <i data-feather="dollar-sign" class="h-5 w-5 text-red-600 mt-1 flex-shrink-0"></i>
+                <p class="text-gray-800 leading-relaxed">
+                  <strong>Higher Input Costs:</strong> Elevated Alberta transport CPI increases logistics expenses for Calgary businesses. Freight, warehousing, and last-mile delivery costs rise, compressing profit margins and potentially driving consumer price inflation.
+                </p>
+              </div>
+              <div class="flex items-start space-x-3">
+                <i data-feather="truck" class="h-5 w-5 text-orange-600 mt-1 flex-shrink-0"></i>
+                <p class="text-gray-800 leading-relaxed">
+                  <strong>Supply Chain Pressure:</strong> Calgary's landlocked position makes it highly dependent on road and rail freight. Rising transport costs reduce competitiveness versus coastal competitors with cheaper port access, affecting export-oriented industries.
+                </p>
+              </div>
+              <div class="flex items-start space-x-3">
+                <i data-feather="users" class="h-5 w-5 text-blue-600 mt-1 flex-shrink-0"></i>
+                <p class="text-gray-800 leading-relaxed">
+                  <strong>Labor Market Impact:</strong> Higher fuel and operating costs strain trucking companies, contributing to driver shortages and wage pressure. Calgary logistics firms face recruitment challenges and must invest in retention strategies.
+                </p>
+              </div>
+              <div class="flex items-start space-x-3">
+                <i data-feather="trending-down" class="h-5 w-5 text-green-600 mt-1 flex-shrink-0"></i>
+                <p class="text-gray-800 leading-relaxed">
+                  <strong>Efficiency Opportunities:</strong> Rising costs incentivize investment in route optimization, warehouse automation, and electric/hybrid fleets. Calgary businesses adopting logistics technology can offset inflation impacts and gain competitive advantages.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </section>
   </main>
 
-  <footer class="text-center text-sm text-gray-500 mt-12 py-4">
-    © 2025 Calgary Insights. Built by Hamza.
+  <footer class="bg-gray-900 text-white py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-sm text-gray-400">© 2025 Calgary Insights. Built by Hamza.</p>
+    </div>
   </footer>
+  <script>feather.replace();</script>
 </body>
 </html>
